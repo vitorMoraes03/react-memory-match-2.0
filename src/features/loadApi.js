@@ -14,47 +14,8 @@ export async function loadApi(searchInput){
     })
     return res.data.results;
 }
-
-    //   if(res.data.results.length < 8){
-    //     alert('Essa palavra tem poucas imagens, tente outra! Você também pode tentar traduzir para o inglês.');
-    //     navigate('/');
-    //     return
-    //   }
-
-    //   let arr1 = res.data.results.map(element => {
-    //       return {
-    //           ...element,
-    //           control: 1 //for key problems
-    //       }
-    //   }
-    //   )
-
-    //   let arr2 = res.data.results.map(element => {
-    //       return {
-    //           ...element,
-    //           control: 2 //for key problems
-    //       }
-    //   }
-    //   )
-
-    //   let duplicateArray = (shuffle([...arr1, ...arr2]));
-    //   setArrayImgs(duplicateArray);
-    //     } 
       catch(err) {
         console.log(err);
         }
 }
 
-function shuffle(array) {
-    let currentIndex = array.length;
-    let randomIndex;
-  
-    while (currentIndex !== 0) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
-    }
-  
-    return array;
-}

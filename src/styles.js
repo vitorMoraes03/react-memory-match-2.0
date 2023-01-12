@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 import imgBackground from './images/backgroundimg-green-several-cards.png';
 
 export const GlobalStyle = createGlobalStyle`
@@ -18,3 +19,15 @@ export const GlobalStyle = createGlobalStyle`
         background-size: cover;
     }    
 `;
+
+export const Title = styled.h1`
+    font-family: 'Recoleta';
+    font-size: 70px;
+    color: rgb(22, 71, 22);
+    padding: 10px;
+    text-align: center;
+
+    ::before {
+        content: 'Angry Match';
+    }
+`

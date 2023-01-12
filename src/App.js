@@ -1,9 +1,8 @@
 import { Routes, Route } from "react-router-dom";
-import { Game } from './pages/Game';
-import { Home } from './pages/Home';
+import { Game } from './pages/Game/index';
+import { Home } from './pages/Home/index';
 import { GlobalStyle } from "./styles";
 import { useState } from "react";
-
 
 function App() {
 
