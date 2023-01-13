@@ -5,12 +5,17 @@ import { useState } from "react";
 
 export function Card(props){
     const card = props.card;
+    const picks = props.picks;
+    const setPicks = props.setPicks;
     const [flipped, setFlipped] = useState(false);
 
     function toggleClick(){
-        // if(picks.length > 1) return;
+        if(picks.secondPick) return;
         setFlipped(true);
-        // setPicks([...picks, {card, setRotated}]);
+        !picks.firstPick ? 
+        setPicks({...picks, firstPick: {card, setFlipped}}): 
+        setPicks({...picks, secondPick: {card, setFlipped}
+        });
     }
     
     return (
