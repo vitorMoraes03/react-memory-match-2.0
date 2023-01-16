@@ -9,24 +9,32 @@ export function Card(props){
     const setPicks = props.setPicks;
     const [flipped, setFlipped] = useState(false);
 
+    card.stateFlipped = {
+        flipped,
+        setFlipped
+    }
+    
     function toggleClick(){
-        if(picks.secondPick) return;
+        if(picks.secondPick || flipped === true) return;
         setFlipped(true);
         !picks.firstPick ? 
         setPicks({...picks, firstPick: {card, setFlipped}}): 
         setPicks({...picks, secondPick: {card, setFlipped}
         });
     }
+
     
+
     return (
             <CardDiv>
                 <Front flipped={flipped}>
                     <img 
-                    src={card.urls.small} 
+                    src={card.urls} 
                     alt={card.alt_description} 
                     ></img>
                 </Front>
-                <Back flipped={flipped} 
+                <Back 
+                flipped={flipped} 
                 onClick={toggleClick}
                 >
                 </Back>

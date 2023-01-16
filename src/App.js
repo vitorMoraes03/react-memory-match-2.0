@@ -14,7 +14,7 @@ function App() {
       <div>
       <Routes>
         <Route path="/" element={<Home setArrayImgs={setArrayImgs}/>} />
-        <Route path="/game" element={<Game arrayImgs={arrayImgs}/>} /> */
+        <Route path="/game" element={<Game arrayImgsState={[arrayImgs, setArrayImgs]}/>} /> */
       </Routes>
       </div>
     </>
