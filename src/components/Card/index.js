@@ -5,23 +5,36 @@ import { useState } from "react";
 
 export function Card(props){
     const card = props.card;
+    const picks = props.picks;
+    const setPicks = props.setPicks;
     const [flipped, setFlipped] = useState(false);
 
-    function toggleClick(){
-        // if(picks.length > 1) return;
-        setFlipped(true);
-        // setPicks([...picks, {card, setRotated}]);
+    card.stateFlipped = {
+        flipped,
+        setFlipped
     }
     
+    function toggleClick(){
+        if(picks.secondPick || flipped === true) return;
+        setFlipped(true);
+        !picks.firstPick ? 
+        setPicks({...picks, firstPick: {card, setFlipped}}): 
+        setPicks({...picks, secondPick: {card, setFlipped}
+        });
+    }
+
+    
+
     return (
             <CardDiv>
                 <Front flipped={flipped}>
                     <img 
-                    src={card.urls.small} 
+                    src={card.urls} 
                     alt={card.alt_description} 
                     ></img>
                 </Front>
-                <Back flipped={flipped} 
+                <Back 
+                flipped={flipped} 
                 onClick={toggleClick}
                 >
                 </Back>
