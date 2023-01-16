@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import imgBack from "../../images/interrogation-cartoon-angry.png"
+import imgBack from "../../features/images/interrogation-cartoon-angry.png"
 
 export const CardDiv = styled.div`
     width: 100%;

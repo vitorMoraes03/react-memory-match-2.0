@@ -10,3 +10,12 @@ export const AllCards = styled.div`
     justify-content: center;
     width: 100%;
 `
+
+export const Counter = styled.div`
+    right: 30px;
+    position: absolute;
+    font-family: 'PressStart2P';
+    color: rgb(22, 71, 22);
+    font-size: 25px;
+    font-weight: 600;
+`

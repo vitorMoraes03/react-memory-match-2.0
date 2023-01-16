@@ -1,9 +1,8 @@
 import { loadApi } from "../../features/loadApi";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form } from "./style";
 import { Title } from "../../styles";
-import { useRef } from "react";
 import { duplicateArr } from "../../features/duplicateArr";
 
 export function Home(props){

@@ -1,6 +1,4 @@
-import { CardDiv } from "./style";
-import { Front } from "./style";
-import { Back } from "./style";
+import { CardDiv, Front, Back } from "./style";
 import { useState } from "react";
 
 export function Card(props){
@@ -22,8 +20,6 @@ export function Card(props){
         setPicks({...picks, secondPick: {card, setFlipped}
         });
     }
-
-    
 
     return (
             <CardDiv>

@@ -1,6 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
-import imgBackground from './images/backgroundimg-green-several-cards.png';
+import imgBackground from './features/images/backgroundimg-green-several-cards.png'
+import PressStart2P from '../src/features/fonts/PressStart2P.woff';
+import PressStart2P_2 from '../src/features/fonts/PressStart2P.woff2';
 
 export const GlobalStyle = createGlobalStyle`
     * {
@@ -10,8 +12,12 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     @font-face {
-    font-family: 'Recoleta';
-    src: url('./fonts/Recoleta-RegularDEMO.otf');
+    font-family: 'PressStart2P';
+    src: local(PressStart2P), local(PressStart2P_2),
+    url(${PressStart2P}) format('woff'),
+    url(${PressStart2P_2}) format('woff2');
+    font-weight: 500;
+    font-style: normal;
     }
 
     body {
@@ -21,10 +27,10 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const Title = styled.h1`
-    font-family: 'Recoleta';
-    font-size: 70px;
+    font-family: 'PressStart2P';
+    font-size: 60px;
     color: rgb(22, 71, 22);
-    padding: 10px;
+    padding: 20px;
     text-align: center;
 
     ::before {

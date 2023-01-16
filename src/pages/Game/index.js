@@ -1,6 +1,6 @@
 import { Title } from "../../styles";
 import { Card } from "../../components/Card";
-import { AllCards } from "./style";
+import { AllCards, Counter } from "./style";
 import { useEffect, useState } from "react";
 import { cardComparision } from "../../features/cardComparision";
 import { useNavigate } from 'react-router-dom';
@@ -10,7 +10,7 @@ export function Game(props){
     const navigate = useNavigate();
     const [arrayImgs, setArrayImgs] = props.arrayImgsState;
     const defaultPicks = {firstPick: undefined, secondPick: undefined};
-    const defaultCounterLoss = 10;
+    const defaultCounterLoss = 2;
     const [picks, setPicks] = useState(defaultPicks);
     const [counterLoss, setCounterLoss] = useState(defaultCounterLoss);
 
@@ -70,6 +70,7 @@ export function Game(props){
                             />;
                 })} 
             </AllCards>
+            <Counter>Lifes {counterLoss}</Counter>
         </>
     )
 }
