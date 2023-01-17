@@ -3,8 +3,7 @@ export function cardComparision(firstPick, secondPick){
         (firstPick.setFlipped(true),
         secondPick.setFlipped(true),
         true):
-        (//setcountloss
-        firstPick.setFlipped(false),
+        (firstPick.setFlipped(false),
         secondPick.setFlipped(false),
         false)
 }

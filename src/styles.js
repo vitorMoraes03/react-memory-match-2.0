@@ -5,6 +5,8 @@ import PressStart2P from '../src/features/fonts/PressStart2P.woff';
 import PressStart2P_2 from '../src/features/fonts/PressStart2P.woff2';
 
 export const GlobalStyle = createGlobalStyle`
+    
+    
     * {
     box-sizing: border-box;
     padding: 0;
@@ -23,14 +25,16 @@ export const GlobalStyle = createGlobalStyle`
     body {
         background-image: url(${imgBackground});
         background-size: cover;
+        --main-color: rgb(22, 71, 22);
+        --secondary-color: rgb(12, 61, 12);
     }    
 `;
 
 export const Title = styled.h1`
     font-family: 'PressStart2P';
     font-size: 60px;
-    color: rgb(22, 71, 22);
-    padding: 20px;
+    color: var(--main-color);
+    padding: 80px;
     text-align: center;
 
     ::before {

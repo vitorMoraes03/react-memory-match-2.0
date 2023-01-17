@@ -10,21 +10,25 @@ export function Game(props){
     const navigate = useNavigate();
     const [arrayImgs, setArrayImgs] = props.arrayImgsState;
     const defaultPicks = {firstPick: undefined, secondPick: undefined};
-    const defaultCounterLoss = 2;
+    const defaultCounterLoss = 10;
     const [picks, setPicks] = useState(defaultPicks);
     const [counterLoss, setCounterLoss] = useState(defaultCounterLoss);
 
     useEffect(() => {
         if(!picks.secondPick) return;
-
         setTimeout(() => {
             if(cardComparision(picks.firstPick, picks.secondPick) === false){
                 setCounterLoss(counterLoss - 1);
             }
-            checkGameFinish();
             setPicks(defaultPicks);
         }, 600);      
     }, [picks]);
+
+    useEffect(() => {
+        setTimeout(() => {
+            checkGameFinish();
+        }, 600);
+    }, [picks])
 
     function checkGameFinish(){
         if(counterLoss === 0){

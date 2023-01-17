@@ -15,7 +15,7 @@ export const Counter = styled.div`
     right: 30px;
     position: absolute;
     font-family: 'PressStart2P';
-    color: rgb(22, 71, 22);
+    color: var(--main-color);
     font-size: 25px;
     font-weight: 600;
 `

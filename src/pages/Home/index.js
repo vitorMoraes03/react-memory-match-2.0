@@ -17,6 +17,9 @@ export function Home(props){
 
     async function handleSubmit(e){
         e.preventDefault();
+        if(!searchInput){inputRef.current.focus();
+            return}
+
         let res = await loadApi(searchInput);
         if(res.length < 8){
             alert('Essa palavra tem poucas imagens, tente outra! Você também pode tentar traduzir para o inglês.');
@@ -34,12 +37,14 @@ export function Home(props){
         <Form>
             <div>
                 <input onChange={handleChange} value={searchInput} maxLength={15} ref={inputRef}></input>
-                <label>
-                    <p>Escolha um tema, como carros, praia, video-game, cerveja.</p>
-                    <p>Você pode errar 10 vezes!</p>
-                </label>
+                <ion-icon 
+                name="search-circle-outline" 
+                onClick={handleSubmit} 
+                ></ion-icon>
             </div>
-            <button onClick={handleSubmit}>Search</button>
+            <label>
+                <p>Jogo da memória, digite um tema: carros, natureza, gatos, etc...</p>
+            </label>
         </Form>
         </div>
     )

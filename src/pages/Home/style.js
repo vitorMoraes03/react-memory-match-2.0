@@ -1,34 +1,45 @@
 import styled from "styled-components";
 
 export const Form = styled.form`
-    text-align: center;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     gap: 6px;
-    color: rgb(22, 71, 22);
+    color: var(--main-color);
+    font-family: 'Roboto Mono', monospace;
+    width: 30%;
+    margin: 10px auto 0 auto;
 
     div {
         display: flex;
-        flex-direction: column; 
+        justify-content: start;
+        gap: 2px;
+        align-items: center;
     }
 
-    button {
-        border-radius: 8px;
-        padding: 4px;
-        height: fit-content;
+    ion-icon {
+        color: var(--main-color);
+        cursor: pointer;
+        font-size: 36px;
+    }
+
+    ion-icon:hover{
+        color: rgb(42, 91, 42);;
+    }
+
+    label {
+        font-size: 26px;
+        font-weight: 500;
+        color: var(--secondary-color);
     }
 
     input {
         background-color: transparent;
         border-radius: 8px;
-        font-size: 20px;
-        padding: 1px;
-    }
-    
-    label {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
+        color: var(--secondary-color);
+        border: 2px solid var(--main-color);
+        font-size: 24px;
+        padding: 2px;
+        outline: none;
     }
 `;
 
