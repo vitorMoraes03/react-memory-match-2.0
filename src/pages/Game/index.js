@@ -1,6 +1,5 @@
-import { Title } from "../../styles";
 import { Card } from "../../components/Card";
-import { AllCards, Counter, Footer, Span } from "./style";
+import { AllCards, Footer } from "./style";
 import { useEffect, useState } from "react";
 import { cardComparision } from "../../features/cardComparision";
 import { useNavigate } from 'react-router-dom';
@@ -73,11 +72,11 @@ export function Game(props){
                             counterLoss={counterLoss}
                             />;
                 })} 
-            <Span/>
+            <span></span>
             </AllCards>
             <Footer>
-            <Title fontSize="25px" padding="0 15px"/>
-            <Counter>Lifes {counterLoss}</Counter>
+                <div>Angry Match</div>
+                <div>Lifes {counterLoss}</div>
             </Footer>
         </>
     )

@@ -25,26 +25,22 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     html, body {
-        background-image: url(${imgBackground});
-        background-size: cover;
         height: 100%;
-        background-color: red;
         --main-color: rgb(22, 71, 22);
         --secondary-color: rgb(12, 61, 12);
-    }    
-`;
+    } 
 
-export const Title = styled.h1`
-    font-family: 'PressStart2P';
-    font-size: ${props => props.fontSize};
-    padding: ${props => props.padding};
-    color: var(--main-color);
-    text-align: center;
-
-    ::before {
-        content: 'Angry Match';
+    body {
+        background-image: url(${imgBackground});
+        background-size: cover;
     }
-`
+    
+    @media (max-width: 600px){
+        body {
+        background-size: auto;
+    }
+}
+`;
 
 export const Container = styled.div`
     height: 100%;

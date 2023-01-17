@@ -1,8 +1,7 @@
 import { loadApi } from "../../features/loadApi";
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { Form } from "./style";
-import { Title } from "../../styles";
+import { Form, Title } from "./style";
 import { duplicateArr } from "../../features/duplicateArr";
 
 export function Home(props){
@@ -33,7 +32,7 @@ export function Home(props){
 
     return (
         <>
-        <Title fontSize="60px" padding="80px"/>
+        <Title/>
         <Form>
             <div>
                 <input onChange={handleChange} value={searchInput} maxLength={15} ref={inputRef}></input>

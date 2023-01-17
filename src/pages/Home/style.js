@@ -43,3 +43,17 @@ export const Form = styled.form`
     }
 `;
 
+export const Title = styled.h1`
+    font-family: 'PressStart2P';
+    font-size: ${props => props.fontSize};
+    padding: ${props => props.padding};
+    color: var(--main-color);
+    text-align: center;
+    font-size: 60px;
+    padding: 80px;
+
+    ::before {
+        content: 'Angry Match';
+    }
+`
+
