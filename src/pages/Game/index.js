@@ -1,6 +1,6 @@
 import { Title } from "../../styles";
 import { Card } from "../../components/Card";
-import { AllCards, Counter } from "./style";
+import { AllCards, Counter, Footer, Span } from "./style";
 import { useEffect, useState } from "react";
 import { cardComparision } from "../../features/cardComparision";
 import { useNavigate } from 'react-router-dom';
@@ -63,7 +63,6 @@ export function Game(props){
 
     return (
         <>
-            <Title/>
             <AllCards>
                 {arrayImgs.map(element => {
                     return <Card 
@@ -71,10 +70,15 @@ export function Game(props){
                             picks={picks} 
                             setPicks={setPicks}
                             key={`${element.id}-${element.key_arr}`}
+                            counterLoss={counterLoss}
                             />;
                 })} 
+            <Span/>
             </AllCards>
+            <Footer>
+            <Title fontSize="25px" padding="0 15px"/>
             <Counter>Lifes {counterLoss}</Counter>
+            </Footer>
         </>
     )
 }

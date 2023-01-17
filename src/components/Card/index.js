@@ -3,6 +3,7 @@ import { useState } from "react";
 
 export function Card(props){
     const card = props.card;
+    const counterLoss = props.counterLoss;
     const picks = props.picks;
     const setPicks = props.setPicks;
     const [flipped, setFlipped] = useState(false);
@@ -14,6 +15,8 @@ export function Card(props){
     
     function toggleClick(){
         if(picks.secondPick || flipped === true) return;
+        if(counterLoss === 0) return;
+
         setFlipped(true);
         !picks.firstPick ? 
         setPicks({...picks, firstPick: {card, setFlipped}}): 

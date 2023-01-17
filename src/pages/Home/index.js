@@ -32,20 +32,20 @@ export function Home(props){
     }   
 
     return (
-        <div>
-        <Title/>
+        <>
+        <Title fontSize="60px" padding="80px"/>
         <Form>
             <div>
                 <input onChange={handleChange} value={searchInput} maxLength={15} ref={inputRef}></input>
                 <ion-icon 
-                name="search-circle-outline" 
+                name="search" 
                 onClick={handleSubmit} 
                 ></ion-icon>
             </div>
             <label>
-                <p>Jogo da memória, digite um tema: carros, natureza, gatos, etc...</p>
+                <p>Digite um tema para montar seu Jogo da Memória. Exemplo: gatos, praia, carros.</p>
             </label>
         </Form>
-        </div>
+        </>
     )
 }

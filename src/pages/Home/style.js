@@ -12,18 +12,18 @@ export const Form = styled.form`
     div {
         display: flex;
         justify-content: start;
-        gap: 2px;
+        gap: 3px;
         align-items: center;
     }
 
     ion-icon {
         color: var(--main-color);
         cursor: pointer;
-        font-size: 36px;
+        font-size: 30px;
     }
 
     ion-icon:hover{
-        color: rgb(42, 91, 42);;
+        color: rgb(42, 91, 42);
     }
 
     label {

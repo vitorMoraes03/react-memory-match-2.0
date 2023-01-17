@@ -1,14 +1,13 @@
 import styled from "styled-components";
 
 export const AllCards = styled.div`
-    width: 120px;
-    margin-top: 10px;
     display: grid;
-    grid-template-columns: repeat(6, 140px);
-    grid-template-rows: repeat(3, 140px);
-    gap: 10px;
+    grid-template-columns: repeat(6, 150px);
+    grid-template-rows: repeat(3, 150px);
+    gap: 15px;
+    height: 90%;
     justify-content: center;
-    width: 100%;
+    align-content: center;
 `
 
 export const Counter = styled.div`
@@ -18,4 +17,14 @@ export const Counter = styled.div`
     color: var(--main-color);
     font-size: 25px;
     font-weight: 600;
+`
+
+export const Footer = styled.div`
+    display: flex;
+`
+export const Span = styled.div`
+    grid-column: 1;
+    grid-row: 3;
+    width: 100%;
+    height: 100%;
 `

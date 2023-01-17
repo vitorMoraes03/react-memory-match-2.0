@@ -5,12 +5,14 @@ import PressStart2P from '../src/features/fonts/PressStart2P.woff';
 import PressStart2P_2 from '../src/features/fonts/PressStart2P.woff2';
 
 export const GlobalStyle = createGlobalStyle`
-    
-    
     * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    }
+
+    #root {
+        height: 100%;
     }
 
     @font-face {
@@ -22,9 +24,11 @@ export const GlobalStyle = createGlobalStyle`
     font-style: normal;
     }
 
-    body {
+    html, body {
         background-image: url(${imgBackground});
         background-size: cover;
+        height: 100%;
+        background-color: red;
         --main-color: rgb(22, 71, 22);
         --secondary-color: rgb(12, 61, 12);
     }    
@@ -32,12 +36,16 @@ export const GlobalStyle = createGlobalStyle`
 
 export const Title = styled.h1`
     font-family: 'PressStart2P';
-    font-size: 60px;
+    font-size: ${props => props.fontSize};
+    padding: ${props => props.padding};
     color: var(--main-color);
-    padding: 80px;
     text-align: center;
 
     ::before {
         content: 'Angry Match';
     }
+`
+
+export const Container = styled.div`
+    height: 100%;
 `
