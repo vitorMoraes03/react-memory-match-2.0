@@ -9,9 +9,11 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    --main-color: rgb(22, 71, 22);
+    --secondary-color: rgb(12, 61, 12);
     }
 
-    #root {
+    #root, html, body {
         height: 100%;
     }
 
@@ -24,21 +26,23 @@ export const GlobalStyle = createGlobalStyle`
     font-style: normal;
     }
 
-    html, body {
-        height: 100%;
-        --main-color: rgb(22, 71, 22);
-        --secondary-color: rgb(12, 61, 12);
-    } 
-
     body {
         background-image: url(${imgBackground});
         background-size: cover;
+    }
+
+    html {
+        font-size: 62.5%;
     }
     
     @media (max-width: 600px){
         body {
         background-size: auto;
     }
+
+        html {
+            font-size: 42.5%;
+        }
 }
 `;
 

@@ -1,16 +1,16 @@
-import { Card } from "../../components/Card";
-import { AllCards, Footer } from "./style";
+import { Card } from "../Card";
+import { AllCards, Footer, Counter} from "./style";
 import { useEffect, useState } from "react";
-import { cardComparision } from "../../features/cardComparision";
 import { useNavigate } from 'react-router-dom';
-import { shuffle } from "../../features/shuffle";
+import { allFunctions } from "../../features/allFunctions";
 
 export function Game(props){
     const navigate = useNavigate();
+    const { cardComparision, shuffle, isSmallScreen } = allFunctions;
     const [arrayImgs, setArrayImgs] = props.arrayImgsState;
     const defaultPicks = {firstPick: undefined, secondPick: undefined};
-    const defaultCounterLoss = 10;
     const [picks, setPicks] = useState(defaultPicks);
+    const defaultCounterLoss = arrayImgs.length - 6;
     const [counterLoss, setCounterLoss] = useState(defaultCounterLoss);
 
     useEffect(() => {
@@ -72,12 +72,16 @@ export function Game(props){
                             counterLoss={counterLoss}
                             />;
                 })} 
-            <span></span>
+            {isSmallScreen() === true ? <Counter>Lifes {counterLoss}</Counter> : null}
             </AllCards>
-            <Footer>
-                <div>Angry Match</div>
-                <div>Lifes {counterLoss}</div>
-            </Footer>
+            {isSmallScreen() === false ? 
+                (<Footer>
+                    <div>Angry Match</div>
+                    <Counter>Lifes {counterLoss}</Counter>
+                </Footer>)
+                 :
+                null
+                }
         </>
     )
 }

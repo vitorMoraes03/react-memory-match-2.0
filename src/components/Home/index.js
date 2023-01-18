@@ -1,14 +1,14 @@
-import { loadApi } from "../../features/loadApi";
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form, Title } from "./style";
-import { duplicateArr } from "../../features/duplicateArr";
+import { allFunctions } from "../../features/allFunctions";
 
 export function Home(props){
     const [searchInput, setSearchInput] = useState([]);
+    const { duplicateArr, isSmallScreen, loadApi } = allFunctions;
     const setArrayImgs = props.setArrayImgs;
     const navigate = useNavigate();
-    const inputRef = useRef(null);
+    const inputFocusRef = useRef(null);
 
     function handleChange(e){
         setSearchInput(e.target.value);
@@ -16,14 +16,17 @@ export function Home(props){
 
     async function handleSubmit(e){
         e.preventDefault();
-        if(!searchInput){inputRef.current.focus();
+        if(!searchInput){inputFocusRef.current.focus();
             return}
 
-        let res = await loadApi(searchInput);
-        if(res.length < 8){
+        let searchAmount = 9;
+        if(isSmallScreen() === true) searchAmount = 7;
+
+        let res = await loadApi(searchInput, searchAmount);
+        if(res.length < searchAmount){
             alert('Essa palavra tem poucas imagens, tente outra! Você também pode tentar traduzir para o inglês.');
             setSearchInput('');
-            inputRef.current.focus();
+            inputFocusRef.current.focus();
             return
         }
         setArrayImgs(duplicateArr(res));
@@ -35,7 +38,7 @@ export function Home(props){
         <Title/>
         <Form>
             <div>
-                <input onChange={handleChange} value={searchInput} maxLength={15} ref={inputRef}></input>
+                <input onChange={handleChange} value={searchInput} maxLength={15} ref={inputFocusRef}></input>
                 <ion-icon 
                 name="search" 
                 onClick={handleSubmit} 

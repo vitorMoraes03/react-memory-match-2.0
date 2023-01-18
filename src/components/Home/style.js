@@ -3,23 +3,24 @@ import styled from "styled-components";
 export const Form = styled.form`
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 0.6rem;
     color: var(--main-color);
     font-family: 'Roboto Mono', monospace;
-    width: 30%;
-    margin: 10px auto 0 auto;
+    width: 40rem;
+    margin: 1rem auto 0 auto;
 
     div {
         display: flex;
         justify-content: start;
         gap: 3px;
         align-items: center;
+        width: 100%;
     }
 
     ion-icon {
         color: var(--main-color);
         cursor: pointer;
-        font-size: 30px;
+        font-size: 3rem;
     }
 
     ion-icon:hover{
@@ -27,17 +28,17 @@ export const Form = styled.form`
     }
 
     label {
-        font-size: 26px;
+        font-size: 2.6rem;
         font-weight: 500;
         color: var(--secondary-color);
     }
 
     input {
         background-color: transparent;
-        border-radius: 8px;
+        border-radius: 0.8rem;
         color: var(--secondary-color);
         border: 2px solid var(--main-color);
-        font-size: 24px;
+        font-size: 2.4rem;
         padding: 2px;
         outline: none;
     }
@@ -45,12 +46,11 @@ export const Form = styled.form`
 
 export const Title = styled.h1`
     font-family: 'PressStart2P';
-    font-size: ${props => props.fontSize};
-    padding: ${props => props.padding};
     color: var(--main-color);
     text-align: center;
-    font-size: 60px;
-    padding: 80px;
+    font-size: 6rem;
+    padding: 8rem;
+    line-height: 8rem;
 
     ::before {
         content: 'Angry Match';
