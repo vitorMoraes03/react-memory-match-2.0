@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import imgBack from "../../images/interrogation-cartoon-angry.png"
+import imgBack from "../../features/images/interrogation-cartoon-angry.png"
 
 export const CardDiv = styled.div`
     width: 100%;
@@ -13,7 +13,7 @@ export const Front = styled.div`
     position: absolute;
     backface-visibility: hidden;
     transition: transform 0.5s;
-    border-radius: 6px;
+    border-radius: 0.6rem;
     transform: ${({ flipped }) => 
         flipped  === false ? 'rotateY(180deg)' : 'none'};
 
