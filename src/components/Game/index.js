@@ -6,7 +6,7 @@ import { allFunctions } from "../../features/allFunctions";
 
 export function Game(props){
     const navigate = useNavigate();
-    const { cardComparision, shuffle, isSmallScreen } = allFunctions;
+    const { cardComparision, shuffle, isSmallScreen, rotateCard } = allFunctions;
     const [arrayImgs, setArrayImgs] = props.arrayImgsState;
     const defaultPicks = {firstPick: undefined, secondPick: undefined};
     const [picks, setPicks] = useState(defaultPicks);
@@ -17,6 +17,7 @@ export function Game(props){
         if(!picks.secondPick) return;
         setTimeout(() => {
             if(cardComparision(picks.firstPick, picks.secondPick) === false){
+                rotateCard(picks.firstPick, picks.secondPick, false)
                 setCounterLoss(counterLoss - 1);
             }
             setPicks(defaultPicks);
