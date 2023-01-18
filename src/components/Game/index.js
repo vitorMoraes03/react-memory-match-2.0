@@ -3,6 +3,7 @@ import { AllCards, Footer, Counter} from "./style";
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { allFunctions } from "../../features/allFunctions";
+import { Modal } from "../Modal";
 
 export function Game(props){
     const navigate = useNavigate();
@@ -12,9 +13,11 @@ export function Game(props){
     const [picks, setPicks] = useState(defaultPicks);
     const defaultCounterLoss = arrayImgs.length - 6;
     const [counterLoss, setCounterLoss] = useState(defaultCounterLoss);
+    const [modal, setModal] = useState({open: false, result: undefined});
 
     useEffect(() => {
         if(!picks.secondPick) return;
+
         setTimeout(() => {
             if(cardComparision(picks.firstPick, picks.secondPick) === false){
                 rotateCard(picks.firstPick, picks.secondPick, false)
@@ -46,12 +49,14 @@ export function Game(props){
     }
 
     function win(){
+        //setModal(true, result: 'winner')
         alert('Deu sorte!');
         setCounterLoss(defaultCounterLoss);
         navigate('/');
     }
 
     function loose(){
+        //setModal(true, result: 'winner')
         alert('Você perdeu...');
         setCounterLoss(defaultCounterLoss);
         setArrayImgs(shuffle(arrayImgs));
@@ -83,6 +88,8 @@ export function Game(props){
                  :
                 null
                 }
+            <button onClick={() => setModal({open: true, result: 'winner'})}>Open Modal</button>
+            {modal.open === true ? <Modal result={modal.result}/> : null}
         </>
     )
 }

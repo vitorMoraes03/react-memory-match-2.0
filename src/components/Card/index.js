@@ -14,8 +14,7 @@ export function Card(props){
     }
     
     function toggleClick(){
-        if(picks.secondPick || flipped === true) return;
-        if(counterLoss === 0) return;
+        if(picks.secondPick || flipped === true || counterLoss === 0) return;
 
         setFlipped(true);
         !picks.firstPick ? 
