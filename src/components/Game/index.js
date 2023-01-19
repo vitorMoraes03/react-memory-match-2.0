@@ -1,18 +1,16 @@
 import { Card } from "../Card";
 import { AllCards, Footer, Counter} from "./style";
 import { useEffect, useState } from "react";
-import { useNavigate } from 'react-router-dom';
 import { allFunctions } from "../../features/allFunctions";
 import { Modal } from "../Modal";
 
 export function Game(props){
-    const navigate = useNavigate();
     const { cardComparision, shuffle, isSmallScreen, rotateCard } = allFunctions;
     const [arrayImgs, setArrayImgs] = props.arrayImgsState;
     const defaultPicks = {firstPick: undefined, secondPick: undefined};
     const [picks, setPicks] = useState(defaultPicks);
-    // const defaultCounterLoss = arrayImgs.length - 6;
-    const defaultCounterLoss = 2;
+    const defaultCounterLoss = arrayImgs.length - 6;
+    // const defaultCounterLoss = 20;
     const [counterLoss, setCounterLoss] = useState(defaultCounterLoss);
     const [modal, setModal] = useState({open: false, winner: undefined});
 
@@ -51,20 +49,16 @@ export function Game(props){
 
     function win(){
         setModal({open: true, winner: true});
-        // alert('Deu sorte!');
         setCounterLoss(defaultCounterLoss);
-        // navigate('/');
     }
 
     function loose(){
         setModal({...modal, open: true});
-        // alert('Você perdeu...');
         setCounterLoss(defaultCounterLoss);
         setArrayImgs(shuffle(arrayImgs));
         arrayImgs.forEach(element => {
             element.stateFlipped.setFlipped(false);
         });
-        // navigate('/game');
     }
 
     return (
@@ -89,8 +83,7 @@ export function Game(props){
                  :
                 null
                 }
-            {/* <button onClick={() => setModal({open: true, result: 'winner'})}>Open Modal</button> */}
-            {modal.open === true ? <Modal winner={modal.winner}/> : null}
+            {modal.open === true ? <Modal winner={modal.winner} setModal={setModal}/> : null}
         </>
     )
 }

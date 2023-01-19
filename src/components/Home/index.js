@@ -45,7 +45,7 @@ export function Home(props){
                 ></ion-icon>
             </div>
             <label>
-                <p>Digite um tema para montar seu Jogo da Memória. Exemplo: gatos, praia, carros.</p>
+                <p>Digite um tema para montar seu Jogo da Memória. Exemplo: gatos, praia, carros, etc...</p>
             </label>
         </Form>
         </>
