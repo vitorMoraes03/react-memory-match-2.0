@@ -1,32 +1,42 @@
-import styled from "styled-components";
 import imgLoss from "../../features/images/angrymatch-loss-cartoon.png";
-import imgWinner from "../../features/images/angrymatch-winner-cartoon.png";
-
-const StyledModal = styled.div`
-    position: absolute;
-    background-color: white;
-    width: 40rem;
-    height: 30rem;
-
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    img {
-        width: 10rem;
-    }
-`
+import imgWin from "../../features/images/angrymatch-winner-cartoon.png";
+import { useNavigate } from 'react-router-dom';
+import { StyledModal, OverlayStyle } from "./style";
 
 export function Modal(props){
-    const result = props.result;
-    // 'winner' 'looser'
+    const winner = props.winner;
+    const setModal = props.setModal;
+    const navigate = useNavigate();
+
+    function textResult(){
+        let textWin = ['Você ganhou, dessa vez...', 'Sorte de principante!', 'Até que sua memória serve para alguma coisa!'];
+        let textLoose = ['Você perdeu!', 'Ta prestando atenção?!', 'Não foi dessa vez, nem da próxima...'];
+        let arr;
+ 
+        if(winner){
+            arr = textWin
+        } else arr = textLoose;
+
+        const randomIndex = Math.floor(Math.random() * arr.length);
+        const item = arr[randomIndex];
+        return item;
+    }
+
+    function handleBtn(){
+        winner? navigate ('/') : navigate('/game');
+        setModal({open: false, winner: undefined});
+    }
 
     return (
-        <StyledModal>
-            {result === 'winner' ? <img src={imgWinner}></img> : <img src={imgLoss}></img>}
-            
-            <p></p>
-            <button></button>
-        </StyledModal>
+        <OverlayStyle>
+            <StyledModal>
+                <img src={winner? imgWin : imgLoss} 
+                alt={winner? 'cartoon character winner' : 'cartoon character looser'}></img>
+                <div>
+                <p>{textResult()}</p>
+                <button onClick={handleBtn}>{winner? 'NOVO JOGO' : 'TENTE DE NOVO'}</button>
+                </div>
+            </StyledModal>
+        </OverlayStyle>
     )
 }

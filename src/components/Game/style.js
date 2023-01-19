@@ -10,8 +10,8 @@ export const AllCards = styled.div`
     align-content: center;
 
     @media (max-width: 600px){
-        grid-template-columns: repeat(3, 12rem);
-        grid-template-rows: repeat(5, 12rem);
+        grid-template-columns: repeat(3, 12.5rem);
+        grid-template-rows: repeat(5, 12.5rem);
     }
 `
 

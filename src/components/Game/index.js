@@ -1,19 +1,18 @@
 import { Card } from "../Card";
 import { AllCards, Footer, Counter} from "./style";
 import { useEffect, useState } from "react";
-import { useNavigate } from 'react-router-dom';
 import { allFunctions } from "../../features/allFunctions";
 import { Modal } from "../Modal";
 
 export function Game(props){
-    const navigate = useNavigate();
     const { cardComparision, shuffle, isSmallScreen, rotateCard } = allFunctions;
     const [arrayImgs, setArrayImgs] = props.arrayImgsState;
     const defaultPicks = {firstPick: undefined, secondPick: undefined};
     const [picks, setPicks] = useState(defaultPicks);
-    const defaultCounterLoss = arrayImgs.length - 6;
+    // const defaultCounterLoss = arrayImgs.length - 6;
+    const defaultCounterLoss = 20;
     const [counterLoss, setCounterLoss] = useState(defaultCounterLoss);
-    const [modal, setModal] = useState({open: false, result: undefined});
+    const [modal, setModal] = useState({open: false, winner: undefined});
 
     useEffect(() => {
         if(!picks.secondPick) return;
@@ -49,21 +48,17 @@ export function Game(props){
     }
 
     function win(){
-        //setModal(true, result: 'winner')
-        alert('Deu sorte!');
+        setModal({open: true, winner: true});
         setCounterLoss(defaultCounterLoss);
-        navigate('/');
     }
 
     function loose(){
-        //setModal(true, result: 'winner')
-        alert('Você perdeu...');
+        setModal({...modal, open: true});
         setCounterLoss(defaultCounterLoss);
         setArrayImgs(shuffle(arrayImgs));
         arrayImgs.forEach(element => {
             element.stateFlipped.setFlipped(false);
         });
-        navigate('/game');
     }
 
     return (
@@ -82,14 +77,13 @@ export function Game(props){
             </AllCards>
             {isSmallScreen() === false ? 
                 (<Footer>
-                    <div>Angry Match</div>
+                    <div>Crazy Match</div>
                     <Counter>Lifes {counterLoss}</Counter>
                 </Footer>)
                  :
                 null
                 }
-            <button onClick={() => setModal({open: true, result: 'winner'})}>Open Modal</button>
-            {modal.open === true ? <Modal result={modal.result}/> : null}
+            {modal.open === true ? <Modal winner={modal.winner} setModal={setModal}/> : null}
         </>
     )
 }
