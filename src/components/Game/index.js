@@ -9,8 +9,8 @@ export function Game(props){
     const [arrayImgs, setArrayImgs] = props.arrayImgsState;
     const defaultPicks = {firstPick: undefined, secondPick: undefined};
     const [picks, setPicks] = useState(defaultPicks);
-    const defaultCounterLoss = arrayImgs.length - 6;
-    // const defaultCounterLoss = 20;
+    // const defaultCounterLoss = arrayImgs.length - 6;
+    const defaultCounterLoss = 20;
     const [counterLoss, setCounterLoss] = useState(defaultCounterLoss);
     const [modal, setModal] = useState({open: false, winner: undefined});
 
@@ -77,7 +77,7 @@ export function Game(props){
             </AllCards>
             {isSmallScreen() === false ? 
                 (<Footer>
-                    <div>Angry Match</div>
+                    <div>Crazy Match</div>
                     <Counter>Lifes {counterLoss}</Counter>
                 </Footer>)
                  :
