@@ -9,10 +9,10 @@ export function Modal(props){
     const navigate = useNavigate();
 
     function textResult(){
-        let textWin = ['Você ganhou, dessa vez...', 'Deu sorte!', 'Parabéns, sua memória é boa!'];
-        let textLoose = ['Você perdeu!', 'Ta prestando atenção?', 'Que azar! Não foi dessa vez...'];
+        let textWin = ['Você ganhou, dessa vez...', 'Sorte de principante!', 'Até que sua memória serve para alguma coisa!'];
+        let textLoose = ['Você perdeu!', 'Ta prestando atenção?!', 'Não foi dessa vez, nem da próxima...'];
         let arr;
-
+ 
         if(winner){
             arr = textWin
         } else arr = textLoose;
@@ -34,7 +34,7 @@ export function Modal(props){
                 alt={winner? 'cartoon character winner' : 'cartoon character looser'}></img>
                 <div>
                 <p>{textResult()}</p>
-                <button onClick={handleBtn}>{winner? 'Novo jogo' : 'Tente de novo'}</button>
+                <button onClick={handleBtn}>{winner? 'NOVO JOGO' : 'TENTE DE NOVO'}</button>
                 </div>
             </StyledModal>
         </OverlayStyle>
