@@ -11,9 +11,10 @@ export function Game(props){
     const [arrayImgs, setArrayImgs] = props.arrayImgsState;
     const defaultPicks = {firstPick: undefined, secondPick: undefined};
     const [picks, setPicks] = useState(defaultPicks);
-    const defaultCounterLoss = arrayImgs.length - 6;
+    // const defaultCounterLoss = arrayImgs.length - 6;
+    const defaultCounterLoss = 2;
     const [counterLoss, setCounterLoss] = useState(defaultCounterLoss);
-    const [modal, setModal] = useState({open: false, result: undefined});
+    const [modal, setModal] = useState({open: false, winner: undefined});
 
     useEffect(() => {
         if(!picks.secondPick) return;
@@ -49,21 +50,21 @@ export function Game(props){
     }
 
     function win(){
-        //setModal(true, result: 'winner')
-        alert('Deu sorte!');
+        setModal({open: true, winner: true});
+        // alert('Deu sorte!');
         setCounterLoss(defaultCounterLoss);
-        navigate('/');
+        // navigate('/');
     }
 
     function loose(){
-        //setModal(true, result: 'winner')
-        alert('Você perdeu...');
+        setModal({...modal, open: true});
+        // alert('Você perdeu...');
         setCounterLoss(defaultCounterLoss);
         setArrayImgs(shuffle(arrayImgs));
         arrayImgs.forEach(element => {
             element.stateFlipped.setFlipped(false);
         });
-        navigate('/game');
+        // navigate('/game');
     }
 
     return (
@@ -88,8 +89,8 @@ export function Game(props){
                  :
                 null
                 }
-            <button onClick={() => setModal({open: true, result: 'winner'})}>Open Modal</button>
-            {modal.open === true ? <Modal result={modal.result}/> : null}
+            {/* <button onClick={() => setModal({open: true, result: 'winner'})}>Open Modal</button> */}
+            {modal.open === true ? <Modal winner={modal.winner}/> : null}
         </>
     )
 }

@@ -11,7 +11,10 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     --main-color: rgb(22, 71, 22);
     --secondary-color: rgb(12, 61, 12);
+    --modal-color: rgb(219, 235, 220);
     }
+
+    #DBEBDC
 
     #root, html, body {
         height: 100%;

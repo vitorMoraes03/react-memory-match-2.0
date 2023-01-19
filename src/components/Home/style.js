@@ -24,7 +24,7 @@ export const Form = styled.form`
     }
 
     ion-icon:hover{
-        color: rgb(42, 91, 42);
+        color: rgb(12, 55, 12);
     }
 
     label {
@@ -37,10 +37,15 @@ export const Form = styled.form`
         background-color: transparent;
         border-radius: 0.8rem;
         color: var(--secondary-color);
-        border: 2px solid var(--main-color);
+        border: 3px solid var(--main-color);
         font-size: 2.4rem;
         padding: 2px;
         outline: none;
+        
+    }
+
+    input:hover {
+        box-shadow: 0px 0px 0px 1px;
     }
 `;
 
