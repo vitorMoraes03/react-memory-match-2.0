@@ -10,15 +10,17 @@ export function Modal(props){
 
     function textResult(){
         let textWin = ['Você ganhou, dessa vez...', 'Sorte de principante!', 'Até que sua memória serve para alguma coisa!'];
-        let textLoose = ['Você perdeu!', 'Ta prestando atenção?!', 'Não foi dessa vez, nem da próxima...'];
+        let textLoose = ['Ta prestando atenção?!', 'Você perdeu!', 'Não foi dessa vez, nem da próxima...'];
         let arr;
  
         if(winner){
             arr = textWin
         } else arr = textLoose;
 
-        const randomIndex = Math.floor(Math.random() * arr.length);
-        const item = arr[randomIndex];
+        // const randomIndex = Math.floor(Math.random() * arr.length);
+        // const item = arr[randomIndex];
+
+        const item = arr[0];
         return item;
     }
 

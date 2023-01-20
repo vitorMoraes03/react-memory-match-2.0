@@ -58,7 +58,7 @@ export const Title = styled.h1`
     line-height: 8rem;
 
     ::before {
-        content: 'Crazy Match';
+        content: 'Angry Match';
     }
 `
 

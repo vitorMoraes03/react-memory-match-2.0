@@ -51,14 +51,20 @@ export function Home(props){
                 ></ion-icon>
             </div>
             <label>
-                <p>Digite um tema para montar seu Jogo da Memória. Exemplo: gatos, praia, carros...</p>
+                <p>
+                Bem vindo ao Angry Match um jogo da memória 
+                onde você pode escolher as imagens das suas cartas.
+                </p>
+                <p>
+                Digite um tema em inglês, como: 'cats', 'nature', 'music'...
+                </p>
             </label>
             </form>
         </FormStyle>
         {modalSearch ?
         (<><ModalSearch>
             <div>
-            <p>Tente outra palavra, ou traduza para o inglês.</p>
+            <p>Tente outra palavra, não temos imagens suficientes para essa.</p>
             <button onClick={() => setModalSearch(false)}>OK</button>
             </div>
             </ModalSearch>
