@@ -1,14 +1,9 @@
 import axios from 'axios';
 
-export const allFunctions = {cardComparision, rotateCard, duplicateArr, isSmallScreen, loadApi, shuffle};
+export const allFunctions = {cardEquality, duplicateArr, isSmallScreen, loadApi, shuffle};
 
-function cardComparision(firstPick, secondPick){
+function cardEquality(firstPick, secondPick){
     return firstPick.card.id === secondPick.card.id ? true : false;
-}
-
-function rotateCard(firstPick, secondPick, boolean){
-    firstPick.setFlipped(boolean);
-    secondPick.setFlipped(boolean);
 }
 
 function duplicateArr(arr){

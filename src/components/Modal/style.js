@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledModal = styled.div`
     position: fixed;
     background-color: var(--modal-color);
-    width: 45rem;
+    width: 42rem;
     height: 30rem;
     display: flex;
     font-family: 'Roboto Mono', monospace;
@@ -12,12 +12,19 @@ export const StyledModal = styled.div`
     align-items: center;
     box-shadow: 1px 1px 20px 1px;
     border-radius: 0.5rem;
-    padding: 3rem;
+    padding: 2rem;
     z-index: 1000;
 
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    @media (max-width: 600px){
+        width: 30rem;
+        height: 42rem;
+        flex-direction: column;
+        justify-content: center;
+    }
    
     div {
         display: flex;

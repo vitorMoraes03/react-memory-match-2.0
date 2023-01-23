@@ -109,3 +109,19 @@ export const ModalSearch = styled.div`
         color: var(--main-color);
     }
 `
+
+export const IconsMedia = styled.div`
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    padding: 1rem;
+    
+    a {
+        color: var(--main-color);
+        padding: 2px;
+    }
+
+    ion-icon {
+        font-size: 2rem;
+    }
+`
