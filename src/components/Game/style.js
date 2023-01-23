@@ -7,11 +7,19 @@ export const AllCards = styled.div`
     gap: 1.5rem;
     padding: 4rem;
     justify-content: center;
-    align-content: center;
 
     @media (max-width: 600px){
         grid-template-columns: repeat(3, 12.5rem);
         grid-template-rows: repeat(5, 12.5rem);
+    }
+
+    @media (max-width: 600px) and (orientation: landscape){
+        grid-template-columns: repeat(5, 12.5rem);
+        grid-template-rows: repeat(3, 12.5rem);
+    }
+
+    @media (min-width: 1300px){
+        padding: 12rem;
     }
 `
 
@@ -42,4 +50,9 @@ export const Counter = styled.div`
             line-height: 3rem;
             font-size: 2.2rem;
         }
+
+        @media (max-width: 600px) and (orientation: landscape){
+            grid-column: 5;
+            grid-row: 3;
+    }
 `

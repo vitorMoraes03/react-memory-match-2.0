@@ -2,33 +2,35 @@ import { Card } from "../Card";
 import { AllCards, Footer, Counter} from "./style";
 import { useEffect, useState } from "react";
 import { allFunctions } from "../../features/allFunctions";
-import { Modal } from "../Modal";
+import Modal from "../Modal";
 
 export function Game(props){
-    const { cardComparision, shuffle, isSmallScreen, rotateCard } = allFunctions;
+    const { cardEquality, shuffle, isSmallScreen } = allFunctions;
     const [arrayImgs, setArrayImgs] = props.arrayImgsState;
     const defaultPicks = {firstPick: undefined, secondPick: undefined};
-    const [picks, setPicks] = useState(defaultPicks);
     const defaultCounterLoss = arrayImgs.length - 6;
+    const defaultFlipTime = 700;
+    const [picks, setPicks] = useState(defaultPicks);
     const [counterLoss, setCounterLoss] = useState(defaultCounterLoss);
     const [modal, setModal] = useState({open: false, winner: undefined});
-
+    
     useEffect(() => {
         if(!picks.secondPick) return;
 
         setTimeout(() => {
-            if(cardComparision(picks.firstPick, picks.secondPick) === false){
-                rotateCard(picks.firstPick, picks.secondPick, false)
+            if(!cardEquality(picks.firstPick, picks.secondPick)){
+                picks.firstPick.setFlipped(false);
+                picks.secondPick.setFlipped(false);
                 setCounterLoss(counterLoss - 1);
             }
             setPicks(defaultPicks);
-        }, 600);      
+        }, defaultFlipTime);      
     }, [picks]);
 
     useEffect(() => {
         setTimeout(() => {
             checkGameFinish();
-        }, 600);
+        }, defaultFlipTime);
     }, [picks])
 
     function checkGameFinish(){
