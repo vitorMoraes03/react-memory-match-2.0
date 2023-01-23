@@ -13,11 +13,6 @@ export const AllCards = styled.div`
         grid-template-rows: repeat(5, 12.5rem);
     }
 
-    @media (max-width: 600px) and (orientation: landscape){
-        grid-template-columns: repeat(5, 12.5rem);
-        grid-template-rows: repeat(3, 12.5rem);
-    }
-
     @media (min-width: 1300px){
         padding: 12rem;
     }
@@ -51,8 +46,4 @@ export const Counter = styled.div`
             font-size: 2.2rem;
         }
 
-        @media (max-width: 600px) and (orientation: landscape){
-            grid-column: 5;
-            grid-row: 3;
-    }
 `
