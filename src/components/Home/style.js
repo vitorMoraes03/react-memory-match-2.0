@@ -20,7 +20,7 @@ export const FormStyle = styled.div`
     ion-icon {
         color: var(--main-color);
         cursor: pointer;
-        font-size: 3rem;
+        font-size: 5.2rem;
     }
 
     ion-icon:hover{
@@ -118,10 +118,10 @@ export const IconsMedia = styled.div`
     
     a {
         color: var(--main-color);
-        padding: 2px;
+        padding: 0.5rem;
     }
 
     ion-icon {
-        font-size: 2rem;
+        font-size: 5.2rem;
     }
 `
