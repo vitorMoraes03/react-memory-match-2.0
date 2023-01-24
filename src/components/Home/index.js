@@ -66,7 +66,7 @@ export function Home(props){
         <a href="https://www.linkedin.com/in/vitorr-moraes/" 
         target="_blank" rel="noopener noreferrer">
         <ion-icon name="logo-linkedin"></ion-icon></a>
-        <a href="https://github.com/vitorMoraes03?tab=repositories" 
+        <a href="https://github.com/vitorMoraes03" 
         target="_blank" rel="noopener noreferrer">
         <ion-icon name="logo-github"></ion-icon></a>
         </IconsMedia>
