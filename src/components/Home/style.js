@@ -65,8 +65,7 @@ export const Title = styled.h1`
 export const ModalSearch = styled.div`
     position: fixed;
     background-color: var(--modal-color);
-    width: 45rem;
-    height: 30rem;
+    width: min(40rem, 70%);
     font-family: 'Roboto Mono', monospace;
     color: var(--primary-color);
     top: 50%;
