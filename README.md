@@ -6,29 +6,29 @@
 
 https://angrymatch.netlify.app/
 
-## Sobre
+## About
 
 <img src="./src/features/images/readme-angrymatch-home.png"/>
 
-**Angry Match** é um jogo da Memória onde você pode escolher o tema das suas cartas. Nosso mascote se irrita facilmente, então preste bastante atenção.
+**Angry Match** it is a Memory game where you can choose the theme of your cards. Our mascot gets easily annoyed, so pay close attention.
 
-## Ferramentas
+## Tools
 
 - JavaScript
 - React.js
 - CSS (Styled Components)
 
-## Objetivos
+## Goals
 
-O maior objetivo desse projeto foi utilizar o React e também Styled Components. Utilizei a API do Unsplash para buscar as fotos.
+The main objective of this project was to use React and Styled Components. I used the Unsplash API to fetch the photos.
 
 <img src="./src/features/images/readme-angrymatch-game.png"/>
 
-O jogo funciona bem em dispositivos móveis, onde são gerados uma quantidade menor de cartas, para caber na tela. Há um limite de tentativas, em caso de derrota o jogador joga o mesmo jogo com as cartas embaralhadas, em caso de vitória ele volta para a tela inicial. Toda a arte foi criada no Midjourney.
+The game works well on mobile devices, where a smaller number of cards are generated to fit the screen. There is a limit of attempts, and in case of defeat, the player plays the same game with shuffled cards. In case of victory, they return to the initial screen. All the artwork was created using Midjourney.
 
 <img src="./src/features/images/readme-angrymatch-modal123.jpg"/>
 
-## Instalação
+## Configuration
 
 ```bash
     $git clone https://github.com/vitorMoraes03/react-memory-match-2.0.git
